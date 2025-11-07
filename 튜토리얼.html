@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Title</title>
+</head>
+<style>
+    @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+    #steal{
+        position: fixed;
+        width: 28vw;;
+        transform: translate(-50%,0);
+        left: 50vw;
+        top: 79vh;
+        z-index: 30;  
+    }
+    #door{
+        position: fixed;
+        width: 23vw;
+        height: 34vh;
+        transform: translate(-50%, -50%);
+        left: 50vw;
+        top: 57vh;
+        background-color: transparent;
+        color: transparent;
+        z-index: 1;
+    }
+    #gameartlayer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('문.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+   transition: filter 1s ease, background-image 3s ease, transform 2s ease, opacity 2s ease;
+   background-attachment: scroll;
+}
+#gameartlayer.door-open {
+    background-image: url('문열림.png');
+    z-index: 1;
+    transition: filter 1s ease,transform 2s ease;;
+}
+body.blur #gameartlayer.door-open{
+    filter: invert(1) blur(3.5px);
+}
+
+#doorkeeper {
+    position: fixed;
+    width: 40vw;
+    transform: translate(-50%, -50%);
+    left: 63vw;
+    top: 63vh;
+    opacity: 0;
+    transition: filter 1s ease, opacity 1.5s ease, transform 1s ease;
+    z-index: 50;
+    pointer-events: none;
+   
+}
+#doorkeeper.visible {
+   opacity: 1;
+   pointer-events: auto;
+}
+#doorkeeper.fallen {
+    transform: translate(-22%, -25%) rotate(90deg);
+    pointer-events: none; 
+}
+
+body.steal #doorkeeper{
+    filter: invert(1); 
+}
+#choice-popup {
+    position: fixed;
+    left: 35vw;
+    top: 29vh; 
+    transform: translateX(-50%);
+    font-family: GalmuriMono9;
+    background-color: rgba(0, 0, 0, 0.8);
+    row-gap: 15px;;
+    padding: 15px;
+    z-index: 100;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    width: max-content;
+    max-width: 90vw;
+}
+#choice-popup.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+#choice-buttons{
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+#choice-buttons button{
+    font-family: GalmuriMono9;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    text-align: left;
+
+}
+#gauge-container{
+    position: fixed;
+    padding: 1vh;
+    height: 3.2vh;
+    width: 38vw;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 96.2%;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-size: 100% 100%; 
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+    
+#gauge-container.show{
+    opacity: 1;
+}
+#identity-gauge {
+    width: 100%; 
+    height: 100%; 
+    background-color: #ff2f2f; 
+    transition: width 0.5s ease; 
+}
+
+</style>
+
+<body>
+    <div id="gameartlayer"></div>
+    <div id="gameartlayer-steal"></div>
+    <img src = '훔치기.png' id = 'steal'>
+    <div id = status>게임에 오신 것을 환영합니다, 용사님!</div>
+    <div id = door>m</div>
+    <img src = '문지기.png' id = 'doorkeeper'>
+    <div id="gauge-container" style="background-image: url('게이지1.png');">
+    <div id="identity-gauge"></div>
+    </div>
+    <div id="choice-popup">
+      <div id = "choice-buttons">
+    <button id = choice-job>▶ [직업정신] (비용 -40)</button>
+     <button id = choice-strength>▶ [기운] (비용 -25)</button>
+</div></div>
+    
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

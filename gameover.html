@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Title</title>
+</head>
+<style>
+    @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+    body{
+        justify-content: center;
+align-items: center;
+display: flex;
+ flex-direction: column;
+    }
+#over{
+    font-family: GalmuriMono9;
+    font-size: 7rem;
+    text-align: center; 
+}  
+#credit{
+    font-family: GalmuriMono9;
+    font-size: 1rem;
+    text-align: center; 
+ margin: 10px;
+}
+#return{
+    background-color: transparent;
+    border: 1px solid black;
+    height: 4.5vh;
+    z-index: 100;
+    left: 28%;
+    top: 57%;
+    color: black;
+    font-family: GalmuriMono9;
+    font-size: 0.8rem;
+
+}
+</style>
+
+<body>
+    <div id = 'over'>GAME OVER!</div>
+     <div id = 'credit'>용사님은 승리도 패배도 그 무엇도 인식하지 못하는 '무(無)개념적'인간이 되어버렸습니다. 용사님은 아직 게임 속에 남아있지만, 왜 여기 있는지, 무엇을 해야 하는지, 심지어 '내'가 누군인지에 대해 알지 못하니다. 게임은 끝나지 않지만 당신은 아무것도 할 수 없습니다.</div>
+    <a href = 'index.html'> <button id = 'return'>시작화면</button></a>
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
