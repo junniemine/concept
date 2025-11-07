@@ -34,10 +34,25 @@ if (identityGauge) {
 
 
 
+if (girl) {
     girl.addEventListener('click', () => {
-        nextText('당신은 그녀애게 어떤 선택을 했나요?')
-    })
-
+        if (savedStage1Choice === 'distance') {
+            nextText("<i>켄...아직 거기 있지? 내가 꼭 구해줄게</i>");
+            setTimeout(()=>{
+                nextText("켄'이 사라진 뒤로, 저 소녀는 매일 울고 있다. 가장 소중한 친구를 빼앗는 건 저 어린 아이에겐 너무 가혹한 일이였을 것이다."); 
+            },2200)
+        } 
+        else if (savedStage1Choice === 'gravity') {
+           nextText('<i>켄, 오늘은 먹을 걸 잔쯕 가져왔어!</i>')
+         setTimeout(()=>{
+                nextText('소녀는 켄과 함께 행복한 시간을 보내고 있다. 만약 그때 [거리]를 훔쳤더라면...')
+            },2300)
+        setTimeout(()=>{
+                nextText('소녀가 건내준 빵 덕분에 게이지를 더 채울 수 있었지...')
+            },5300)
+        }
+    });
+}
 boy.addEventListener('click',()=>{
     nextText('<i>아직 나이도 어린 놈이 왜 이렇게 기운이 없어! 얼른 일어나지 못해?/i>')
     setTimeout(()=>{
@@ -49,7 +64,7 @@ boy.addEventListener('click',()=>{
 })
 identityGauge.addEventListener('click',()=>{
     if(stealMode){
-        choicePopup.classList.add('show')
+        choicePopup.classList.add()
     }
 })
 choicePopup.addEventListener('click',()=>{
