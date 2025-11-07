@@ -124,9 +124,6 @@ choicePopup1.addEventListener('click',(e)=>{
 
 choicePopup2.addEventListener('click',(e)=>{
     if(e.target.id == 'choice-memory'){
-        nextText('정말 [기억]을 훔치시겠습니까? ')
-        warning.classList.add('show')
-        warning.addEventListener('click',()=>{
             gameartlayer3.classList.add('memory')
         nextText('...내가 왜 여기에 서 있지?')
         setTimeout( () => { nextText("...나는... '누구'지?") 
@@ -135,6 +132,6 @@ choicePopup2.addEventListener('click',(e)=>{
         }, 4000)
          setTimeout( () => {  window.location.href = '튜토리얼.html'
         }, 6000)
-        })
+        
     }
 })
