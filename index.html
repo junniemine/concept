@@ -9,11 +9,50 @@
 </head>
 <style>
     @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
-    
+        #gameartlayer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('문.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+   background-attachment: scroll;
+   filter: blur(3px)
+}
+
+#title{
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85vw;
+    height: auto;
+
+}
+    #return{
+   background-color: #ffffff;
+   position: fixed;
+    border: 1px solid black;
+    height: 4.5vh;
+    z-index: 100;
+    left: 45%;
+    top: 60%;
+    color: black;
+    font-family: GalmuriMono9;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    text-decoration: none;
+
+}
 </style>
 
 <body>
-    <a href = '튜토리얼.html'>게임시작</a>
+    <img src = '제목.png' id = 'title'>
+    <div id = 'gameartlayer'></div>
+     <a href = 'index.html'> <button id = 'return'>시작하기</button></a>
+    <div id = 'gameartlayer4'></div>
     <script type="module" src="./src/main.js"></script>
 </body>
 

@@ -115,7 +115,7 @@ tower.addEventListener('click',()=>{
     if(!stealMode){
     nextText('마을의 상징과도 같던 탑. 이 탑으로 많은 관광객들이 이 마을을 찾았지만, 탑이 붕괴되자 관광객들의 발은 뚝 끊켰다.')
      setTimeout(() => {
-        nextText('탑이 붕괴되던 날의 기억은 주민들에게 악몽같은 존재이다. 이 끔찍한 기억이 사라지기 전까지 사람들이 행복해지는 것은 힘들어 보인다.');
+        nextText('탑이 붕괴되던 날의 기억은 주민들에게 악몽같은 존재이다. 이 붕괴된 탑이 고쳐지기 전까지 사람들이 행복해지는 것은 힘들어 보인다.');
     }, 5500);
    }
     if(stealMode){
@@ -181,7 +181,7 @@ if (isDroppedOnTarget) {
         if (hasStolenFailure === true) {
             nextText("마을의 [실패]가 사라진 자리에, [활기]가 주입됩니다! 마을이 변하기 시작합니다!");
                         setTimeout(() => {
-        nextText('수고하셨어요 용사님! 마을에 활력을 되찾았어요!');
+        nextText('수고하셨어요 용사님! 마을이 활력을 되찾았어요!');
     }, 2500);
     setTimeout(() => {
         nextText('<i>.........</i>');

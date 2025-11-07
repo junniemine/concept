@@ -21,6 +21,14 @@
    transition: filter 1s ease, background-image 2s ease, transform 2s ease, opacity 2s ease;
    background-attachment: scroll;
 }
+#gameartlayer3.white {
+    background-image: url('흰.png');
+    z-index: 100;
+}
+#gameartlayer3.memory {
+    background-image: url('기억.png');
+    z-index: 100;
+}
 #steal{
         position: fixed;
         width: 28vw;;
@@ -52,13 +60,13 @@
     width: 38vw;
     transform: translateX(-50%);
     left: 50%;
-    top: 95.5%;
+    top: 93%;
     z-index: 1000;
     box-sizing: border-box;
     background-size: 100% 100%; 
     transition: opacity 0.5s ease;
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
 }
 #identity-gauge {
     width: 100%; 
@@ -85,8 +93,8 @@
 }
 #choice-popup {
     position: fixed;
-    left: 71vw;
-    top: 57vh; 
+    left: 52vw;
+    top: 61vh; 
     transform: translateX(-50%);
     font-family: GalmuriMono9;
     background-color: rgba(0, 0, 0, 0.8);
@@ -121,13 +129,114 @@
     color: white;
     text-align: left;
 }
-#door{
+#choice-popup1 {
+    position: fixed;
+    left: 75vw;
+    top: 73vh; 
+    transform: translateX(-50%);
+    font-family: GalmuriMono9;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    z-index: 100;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 0.9rem;
+    width: max-content;
+    max-width: 90vw;
+    z-index: 50;
+}
+#choice-popup1.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+#choice-buttons1{
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    font-size: 0.8rem;
+}
+#choice-buttons1 button{
+    font-family: GalmuriMono9;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    text-align: left;
+}
+#door1{
     position: fixed;
     top: 36%;
     left: 32%;
     width: 40vw;
     height: 25vh;
     z-index: 200;
+    pointer-events: auto;
+}
+#choice-popup2 {
+    position: fixed;
+    left: 52vw;
+    top: vh; 
+    transform: translateX(-50%);
+    font-family: GalmuriMono9;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    z-index: 100;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 0.9rem;
+    width: max-content;
+    max-width: 90vw;
+    z-index: 50;
+}
+#choice-popup2.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+#choice-buttons2{
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    font-size: 0.8rem;
+}
+#choice-buttons2 button{
+    font-family: GalmuriMono9;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    text-align: left;
+}
+#choice-popup2 {
+    position: fixed;
+    left: 52vw;
+    top: 10vh; 
+    transform: translateX(-50%);
+    font-family: GalmuriMono9;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    z-index: 100;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 0.9rem;
+    width: max-content;
+    max-width: 90vw;
+    z-index: 50;
+}
+#wa.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 </style>
 
@@ -140,8 +249,19 @@
         <button id = choice-lock>▶ 잠금 (비용 -20)</button>
       </div>
     </div>
+    <div id="choice-popup1">
+      <div id = "choice-buttons1">정체성 게이지
+        <button id = choice-gauge>▶ 정체성 (비용 -10)</button>
+      </div>
+    </div>
+    <div id="choice-popup2">
+      <div id = "choice-buttons2">소녀와 소년
+        <button id = choice-memory>▶ 기억 (비용 -10)</button>
+      </div>
+    </div>
     <div id = 'girl'></div>
-    <div id = 'door'></div>
+    <div id = 'door1'></div>
+    <div id = 'warning'></div>
     <img src = '훔치기.png' id = 'steal'>
     <div id = 'gauge-container' style="background-image: url('게이지1.png');">
     <div id = 'identity-gauge'></div></div>

@@ -19,7 +19,7 @@ let currentIdentity = 100;
 if(steal){
 steal.addEventListener('click', () => {
     stealMode = !stealMode
-    document.body.classList.add('steal');
+    document.body.classList.toggle('steal');
     if(stealMode){
         nextText('훔칠 개념을 선택하세요')
     }
@@ -99,7 +99,7 @@ choicePopup1.addEventListener('click', (e) => {
         nextText('두 절벽이 하나로 합쳐집니다. 크라켄은 온데간데 없이 사라졌습니다.');
         setTimeout(() => {
         nextText('<i>아..안돼..</i>');
-    }, 5000);
+    }, 3000);
         setTimeout(() => {
         nextText('다음 스테이지로 넘어가볼까요?');
     }, 7500);
