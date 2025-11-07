@@ -92,14 +92,20 @@ choicePopup.addEventListener('click',(e)=>{
 door.addEventListener('click',()=>{
     if(stealMode){
         choicePopup.classList.add('show')
+        choicePopup2.classList.remove('show')
+        choicePopup1.classList.remove('show')
     } else{
         nextText('단단한 문입니다.. 처음과 같이')
     }
 })
 
 gaugecontainer.addEventListener('click',()=>{
+    if(stealMode){
     choicePopup1.classList.add('show')
     choicePopup.classList.remove('show')
+    } else if (!stealMode){
+        nextText('당신의 정체성입니다. 당신은 어떤 사람인가요?')
+    }
 })
 choicePopup1.addEventListener('click',(e)=>{
     if (e.target.id = 'choice-gauge'){
