@@ -5,6 +5,7 @@ const status = document.getElementById('status3');
 const steal = document.getElementById('steal'); 
 const boy = document.getElementById('boy');
 const girl = document.getElementById('girl');  
+const door = document.getElementById('door'); 
 const gameartlayer3= document.getElementById('gameartlayer3');
 const choicePopup = document.getElementById('choice-popup')
 let savedStage1Choice = localStorage.getItem('stage1Choice');
@@ -54,7 +55,7 @@ if (girl) {
     });
 }
 boy.addEventListener('click',()=>{
-    nextText('<i>아직 나이도 어린 놈이 왜 이렇게 기운이 없어! 얼른 일어나지 못해?/i>')
+    nextText('<i>아직 나이도 어린 놈이 왜 이렇게 기운이 없어! 얼른 일어나지 못해?</i>')
     setTimeout(()=>{
                 nextText('소년은 내가 사라진 후 하염없이 돌덩이에 가만히 앉아있다.')
             },2300)
@@ -68,7 +69,7 @@ identityGauge.addEventListener('click',()=>{
     }
 })
 choicePopup.addEventListener('click',()=>{
-    if(identityGauge = 20){
+    if(identityGauge = 20 && e.target.id == 'choice-lock'){
         nextText('효율만 따지는 이 시스템 속에서 따뜻한 마음을 잊지 않으셨군요. 다시 한 번 뒤를 돌아보는 세심함까지 당신은 계속 그 힘을 가질 자격이 있어요')
         setTimeout(()=>{
             window.location.href = '히든엔딩.html'
@@ -79,4 +80,9 @@ choicePopup.addEventListener('click',()=>{
          window.location.href = 'gameover.html'
     })
 }
+})
+door.addEventListener('click',()=>{
+    if(stealMode){
+        choicePopup.classList.add('show')
+    }
 })
